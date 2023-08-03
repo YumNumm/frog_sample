@@ -1,0 +1,6 @@
+name: frog_sample
+
+
+
+packages:
+  - packages/*

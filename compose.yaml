@@ -1,0 +1,9 @@
+services:
+  bff:
+    build:
+      context: ./packages/bff
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - 8080:8080

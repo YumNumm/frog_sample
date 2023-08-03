@@ -1,0 +1,14 @@
+name: github_api
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+environment:
+  sdk: ^3.0.6
+
+dependencies:
+  retrofit: ">=4.0.0 <5.0.0"
+
+dev_dependencies:
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
+  retrofit_generator: ">=5.0.0 <6.0.0"

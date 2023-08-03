@@ -1,6 +1,6 @@
 name: frog_sample
-
-
+repository: https://github.com/YumNumm/frog_sample
+sdkPath: .fvm/flutter_sdk
 
 packages:
   - packages/*

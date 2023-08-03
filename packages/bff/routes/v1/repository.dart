@@ -1,20 +1,41 @@
 import 'package:bff/common/error/400.dart';
+import 'package:bff/common/error/500.dart';
 import 'package:bff/v1/repository.dart';
+import 'package:bff_api_dto/model/repository_dto.dart';
 import 'package:dart_frog/dart_frog.dart';
+import 'package:github_api/github_api.dart';
 
-Response onRequest(RequestContext context) {
+Future<Response> onRequest(RequestContext context) async {
   // query param
   final request = context.request;
+  final RepositoryParam params;
   try {
-    final params = RepositoryParam.fromJson(request.uri.queryParameters);
-  } catch (error, stackTrace) {
+    params = RepositoryParam.fromJson(request.uri.queryParameters);
+  } catch (error) {
     // Query parameter was invalid
     return BadRequestResponse(
       message: 'Invalid query parameter',
       exception: error.toString(),
     ).response;
   }
-  return Response.json(
-    body: {'message': 'Hello, world!'},
-  );
+  try {
+    final client = context.read<RepositoryApiClient>();
+    final result = await client.fetch(
+      'application/vnd.github+json',
+      'dart-frog',
+      params.query,
+      null,
+      null,
+      params.page,
+      params.perPage,
+    );
+    return Response.json(
+      body: RepositoryDto.fromSearchResponse(result),
+    );
+  } catch (e) {
+    return InternalServerErrorResponse(
+      message: 'Internal server error',
+      exception: e.toString(),
+    ).response;
+  }
 }

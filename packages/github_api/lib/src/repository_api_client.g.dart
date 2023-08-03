@@ -24,7 +24,6 @@ class _RepositoryApiClient implements RepositoryApiClient {
   Future<SearchResponse> fetch(
     accept,
     userAgent,
-    authorization,
     query,
     sort,
     order,
@@ -43,7 +42,6 @@ class _RepositoryApiClient implements RepositoryApiClient {
     final _headers = <String, dynamic>{
       r'accept': accept,
       r'User-Agent': userAgent,
-      r'Authorization': authorization,
     };
     _headers.removeWhere((k, v) => v == null);
     final Map<String, dynamic>? _data = null;

@@ -7,10 +7,12 @@ part 'repository.g.dart';
 class RepositoryParam with _$RepositoryParam {
   const factory RepositoryParam({
     required String query,
-    @Default(0) int page,
-    @Default(50) int perPage,
+    @JsonKey(fromJson: _toInt) @Default(0) int page,
+    @JsonKey(fromJson: _toInt) @Default(50) int perPage,
   }) = _RepositoryParam;
 
   factory RepositoryParam.fromJson(Map<String, dynamic> json) =>
       _$RepositoryParamFromJson(json);
 }
+
+int _toInt(String str) => int.parse(str);

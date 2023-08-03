@@ -16,7 +16,6 @@ abstract class RepositoryApiClient {
     /// application/vnd.github+json
     @Header('accept') String accept,
     @Header('User-Agent') String userAgent,
-    @Header('Authorization') String authorization,
     @Query('q') String query,
     @Query('sort') String? sort,
     @Query('order') String? order,

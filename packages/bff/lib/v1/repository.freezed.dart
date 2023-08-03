@@ -21,7 +21,9 @@ RepositoryParam _$RepositoryParamFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RepositoryParam {
   String get query => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _toInt)
   int get page => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _toInt)
   int get perPage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +38,10 @@ abstract class $RepositoryParamCopyWith<$Res> {
           RepositoryParam value, $Res Function(RepositoryParam) then) =
       _$RepositoryParamCopyWithImpl<$Res, RepositoryParam>;
   @useResult
-  $Res call({String query, int page, int perPage});
+  $Res call(
+      {String query,
+      @JsonKey(fromJson: _toInt) int page,
+      @JsonKey(fromJson: _toInt) int perPage});
 }
 
 /// @nodoc
@@ -81,7 +86,10 @@ abstract class _$$_RepositoryParamCopyWith<$Res>
       __$$_RepositoryParamCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String query, int page, int perPage});
+  $Res call(
+      {String query,
+      @JsonKey(fromJson: _toInt) int page,
+      @JsonKey(fromJson: _toInt) int perPage});
 }
 
 /// @nodoc
@@ -120,7 +128,9 @@ class __$$_RepositoryParamCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RepositoryParam implements _RepositoryParam {
   const _$_RepositoryParam(
-      {required this.query, this.page = 0, this.perPage = 50});
+      {required this.query,
+      @JsonKey(fromJson: _toInt) this.page = 0,
+      @JsonKey(fromJson: _toInt) this.perPage = 50});
 
   factory _$_RepositoryParam.fromJson(Map<String, dynamic> json) =>
       _$$_RepositoryParamFromJson(json);
@@ -128,10 +138,10 @@ class _$_RepositoryParam implements _RepositoryParam {
   @override
   final String query;
   @override
-  @JsonKey()
+  @JsonKey(fromJson: _toInt)
   final int page;
   @override
-  @JsonKey()
+  @JsonKey(fromJson: _toInt)
   final int perPage;
 
   @override
@@ -170,8 +180,8 @@ class _$_RepositoryParam implements _RepositoryParam {
 abstract class _RepositoryParam implements RepositoryParam {
   const factory _RepositoryParam(
       {required final String query,
-      final int page,
-      final int perPage}) = _$_RepositoryParam;
+      @JsonKey(fromJson: _toInt) final int page,
+      @JsonKey(fromJson: _toInt) final int perPage}) = _$_RepositoryParam;
 
   factory _RepositoryParam.fromJson(Map<String, dynamic> json) =
       _$_RepositoryParam.fromJson;
@@ -179,8 +189,10 @@ abstract class _RepositoryParam implements RepositoryParam {
   @override
   String get query;
   @override
+  @JsonKey(fromJson: _toInt)
   int get page;
   @override
+  @JsonKey(fromJson: _toInt)
   int get perPage;
   @override
   @JsonKey(ignore: true)

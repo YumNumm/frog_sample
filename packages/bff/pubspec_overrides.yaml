@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: github_api,bff_api_dto
+dependency_overrides:
+  bff_api_dto:
+    path: ../bff_api_dto
+  github_api:
+    path: ../github_api

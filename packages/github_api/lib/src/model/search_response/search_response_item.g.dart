@@ -1,51 +1,85 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: type=lint
+
 part of 'search_response_item.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SearchResponseItem _$SearchResponseItemFromJson(Map<String, dynamic> json) =>
-    SearchResponseItem(
-      id: json['id'] as int,
-      nodeId: json['node_id'] as String,
-      fullName: json['full_name'] as String,
-      private: json['private'] as bool,
-      htmlUrl: json['html_url'] as String,
-      description: json['description'] as String?,
-      fork: json['fork'] as bool,
-      url: json['url'] as String,
-      createdAt: DateTime.parse(json['created_at'] as String),
-      updatedAt: DateTime.parse(json['updated_at'] as String),
-      pushedAt: DateTime.parse(json['pushed_at'] as String),
-      size: json['size'] as int,
-      stargazersCount: json['stargazers_count'] as int,
-      watchersCount: json['watchers_count'] as int,
-      language: json['language'] as String?,
-      forksCount: json['forks_count'] as int,
-      openIssuesCount: json['open_issues_count'] as int,
-      masterBranch: json['master_branch'] as String?,
-      forks: json['forks'] as int,
-      openIssues: json['open_issues'] as int,
-      watchers: json['watchers'] as int,
-      hasIssues: json['has_issues'] as bool,
-      hasProjects: json['has_projects'] as bool,
-      hasPages: json['has_pages'] as bool,
-      hasWiki: json['has_wiki'] as bool,
-      hasDownloads: json['has_downloads'] as bool,
-      archived: json['archived'] as bool,
-      license: json['license'] == null
-          ? null
-          : SearchResponseLicense.fromJson(
-              json['license'] as Map<String, dynamic>),
-      owner:
-          SearchResponseOwner.fromJson(json['owner'] as Map<String, dynamic>),
-      topics:
-          (json['topics'] as List<dynamic>).map((e) => e as String).toList(),
+_$_SearchResponseItem _$$_SearchResponseItemFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      r'_$_SearchResponseItem',
+      json,
+      ($checkedConvert) {
+        final val = _$_SearchResponseItem(
+          id: $checkedConvert('id', (v) => v as int),
+          nodeId: $checkedConvert('node_id', (v) => v as String),
+          fullName: $checkedConvert('full_name', (v) => v as String),
+          private: $checkedConvert('private', (v) => v as bool),
+          htmlUrl: $checkedConvert('html_url', (v) => v as String),
+          description: $checkedConvert('description', (v) => v as String?),
+          fork: $checkedConvert('fork', (v) => v as bool),
+          createdAt:
+              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
+          updatedAt:
+              $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
+          pushedAt:
+              $checkedConvert('pushed_at', (v) => DateTime.parse(v as String)),
+          size: $checkedConvert('size', (v) => v as int),
+          stargaersCount: $checkedConvert('stargaers_count', (v) => v as int),
+          watchersCount: $checkedConvert('watchers_count', (v) => v as int),
+          language: $checkedConvert('language', (v) => v as String?),
+          forksCount: $checkedConvert('forks_count', (v) => v as int),
+          openIssuesCount:
+              $checkedConvert('open_issues_count', (v) => v as int),
+          masterBranch: $checkedConvert('master_branch', (v) => v as String?),
+          forks: $checkedConvert('forks', (v) => v as int),
+          openIssues: $checkedConvert('open_issues', (v) => v as int),
+          watchers: $checkedConvert('watchers', (v) => v as int),
+          hasIssues: $checkedConvert('has_issues', (v) => v as bool),
+          hasProjects: $checkedConvert('has_projects', (v) => v as bool),
+          hasPages: $checkedConvert('has_pages', (v) => v as bool),
+          hasWiki: $checkedConvert('has_wiki', (v) => v as bool),
+          hasDownloads: $checkedConvert('has_downloads', (v) => v as bool),
+          archived: $checkedConvert('archived', (v) => v as bool),
+          license: $checkedConvert(
+              'license',
+              (v) => v == null
+                  ? null
+                  : SearchResponseLicense.fromJson(v as Map<String, dynamic>)),
+          owner: $checkedConvert('owner',
+              (v) => SearchResponseOwner.fromJson(v as Map<String, dynamic>)),
+          topics: $checkedConvert('topics',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'nodeId': 'node_id',
+        'fullName': 'full_name',
+        'htmlUrl': 'html_url',
+        'createdAt': 'created_at',
+        'updatedAt': 'updated_at',
+        'pushedAt': 'pushed_at',
+        'stargaersCount': 'stargaers_count',
+        'watchersCount': 'watchers_count',
+        'forksCount': 'forks_count',
+        'openIssuesCount': 'open_issues_count',
+        'masterBranch': 'master_branch',
+        'openIssues': 'open_issues',
+        'hasIssues': 'has_issues',
+        'hasProjects': 'has_projects',
+        'hasPages': 'has_pages',
+        'hasWiki': 'has_wiki',
+        'hasDownloads': 'has_downloads'
+      },
     );
 
-Map<String, dynamic> _$SearchResponseItemToJson(SearchResponseItem instance) =>
+Map<String, dynamic> _$$_SearchResponseItemToJson(
+        _$_SearchResponseItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'node_id': instance.nodeId,
@@ -54,12 +88,11 @@ Map<String, dynamic> _$SearchResponseItemToJson(SearchResponseItem instance) =>
       'html_url': instance.htmlUrl,
       'description': instance.description,
       'fork': instance.fork,
-      'url': instance.url,
       'created_at': instance.createdAt.toIso8601String(),
       'updated_at': instance.updatedAt.toIso8601String(),
       'pushed_at': instance.pushedAt.toIso8601String(),
       'size': instance.size,
-      'stargazers_count': instance.stargazersCount,
+      'stargaers_count': instance.stargaersCount,
       'watchers_count': instance.watchersCount,
       'language': instance.language,
       'forks_count': instance.forksCount,
@@ -74,7 +107,7 @@ Map<String, dynamic> _$SearchResponseItemToJson(SearchResponseItem instance) =>
       'has_wiki': instance.hasWiki,
       'has_downloads': instance.hasDownloads,
       'archived': instance.archived,
-      'license': instance.license?.toJson(),
-      'owner': instance.owner.toJson(),
+      'license': instance.license,
+      'owner': instance.owner,
       'topics': instance.topics,
     };

@@ -4,4 +4,5 @@ environment:
   sdk: "^3.0.0"
 dev_dependencies:
   melos: ^3.1.1
-
+dependencies:
+  dio: ^5.3.2

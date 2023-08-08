@@ -31,7 +31,7 @@ mixin _$SearchResponseItem {
   DateTime get updatedAt => throw _privateConstructorUsedError;
   DateTime get pushedAt => throw _privateConstructorUsedError;
   int get size => throw _privateConstructorUsedError;
-  int get stargaersCount => throw _privateConstructorUsedError;
+  int get stargazersCount => throw _privateConstructorUsedError;
   int get watchersCount => throw _privateConstructorUsedError;
   String? get language => throw _privateConstructorUsedError;
   int get forksCount => throw _privateConstructorUsedError;
@@ -74,7 +74,7 @@ abstract class $SearchResponseItemCopyWith<$Res> {
       DateTime updatedAt,
       DateTime pushedAt,
       int size,
-      int stargaersCount,
+      int stargazersCount,
       int watchersCount,
       String? language,
       int forksCount,
@@ -121,7 +121,7 @@ class _$SearchResponseItemCopyWithImpl<$Res, $Val extends SearchResponseItem>
     Object? updatedAt = null,
     Object? pushedAt = null,
     Object? size = null,
-    Object? stargaersCount = null,
+    Object? stargazersCount = null,
     Object? watchersCount = null,
     Object? language = freezed,
     Object? forksCount = null,
@@ -185,9 +185,9 @@ class _$SearchResponseItemCopyWithImpl<$Res, $Val extends SearchResponseItem>
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      stargaersCount: null == stargaersCount
-          ? _value.stargaersCount
-          : stargaersCount // ignore: cast_nullable_to_non_nullable
+      stargazersCount: null == stargazersCount
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
               as int,
       watchersCount: null == watchersCount
           ? _value.watchersCount
@@ -301,7 +301,7 @@ abstract class _$$_SearchResponseItemCopyWith<$Res>
       DateTime updatedAt,
       DateTime pushedAt,
       int size,
-      int stargaersCount,
+      int stargazersCount,
       int watchersCount,
       String? language,
       int forksCount,
@@ -348,7 +348,7 @@ class __$$_SearchResponseItemCopyWithImpl<$Res>
     Object? updatedAt = null,
     Object? pushedAt = null,
     Object? size = null,
-    Object? stargaersCount = null,
+    Object? stargazersCount = null,
     Object? watchersCount = null,
     Object? language = freezed,
     Object? forksCount = null,
@@ -412,9 +412,9 @@ class __$$_SearchResponseItemCopyWithImpl<$Res>
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      stargaersCount: null == stargaersCount
-          ? _value.stargaersCount
-          : stargaersCount // ignore: cast_nullable_to_non_nullable
+      stargazersCount: null == stargazersCount
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
               as int,
       watchersCount: null == watchersCount
           ? _value.watchersCount
@@ -503,7 +503,7 @@ class _$_SearchResponseItem implements _SearchResponseItem {
       required this.updatedAt,
       required this.pushedAt,
       required this.size,
-      required this.stargaersCount,
+      required this.stargazersCount,
       required this.watchersCount,
       required this.language,
       required this.forksCount,
@@ -549,7 +549,7 @@ class _$_SearchResponseItem implements _SearchResponseItem {
   @override
   final int size;
   @override
-  final int stargaersCount;
+  final int stargazersCount;
   @override
   final int watchersCount;
   @override
@@ -592,7 +592,7 @@ class _$_SearchResponseItem implements _SearchResponseItem {
 
   @override
   String toString() {
-    return 'SearchResponseItem(id: $id, nodeId: $nodeId, fullName: $fullName, private: $private, htmlUrl: $htmlUrl, description: $description, fork: $fork, createdAt: $createdAt, updatedAt: $updatedAt, pushedAt: $pushedAt, size: $size, stargaersCount: $stargaersCount, watchersCount: $watchersCount, language: $language, forksCount: $forksCount, openIssuesCount: $openIssuesCount, masterBranch: $masterBranch, forks: $forks, openIssues: $openIssues, watchers: $watchers, hasIssues: $hasIssues, hasProjects: $hasProjects, hasPages: $hasPages, hasWiki: $hasWiki, hasDownloads: $hasDownloads, archived: $archived, license: $license, owner: $owner, topics: $topics)';
+    return 'SearchResponseItem(id: $id, nodeId: $nodeId, fullName: $fullName, private: $private, htmlUrl: $htmlUrl, description: $description, fork: $fork, createdAt: $createdAt, updatedAt: $updatedAt, pushedAt: $pushedAt, size: $size, stargazersCount: $stargazersCount, watchersCount: $watchersCount, language: $language, forksCount: $forksCount, openIssuesCount: $openIssuesCount, masterBranch: $masterBranch, forks: $forks, openIssues: $openIssues, watchers: $watchers, hasIssues: $hasIssues, hasProjects: $hasProjects, hasPages: $hasPages, hasWiki: $hasWiki, hasDownloads: $hasDownloads, archived: $archived, license: $license, owner: $owner, topics: $topics)';
   }
 
   @override
@@ -616,8 +616,8 @@ class _$_SearchResponseItem implements _SearchResponseItem {
             (identical(other.pushedAt, pushedAt) ||
                 other.pushedAt == pushedAt) &&
             (identical(other.size, size) || other.size == size) &&
-            (identical(other.stargaersCount, stargaersCount) ||
-                other.stargaersCount == stargaersCount) &&
+            (identical(other.stargazersCount, stargazersCount) ||
+                other.stargazersCount == stargazersCount) &&
             (identical(other.watchersCount, watchersCount) ||
                 other.watchersCount == watchersCount) &&
             (identical(other.language, language) ||
@@ -664,7 +664,7 @@ class _$_SearchResponseItem implements _SearchResponseItem {
         updatedAt,
         pushedAt,
         size,
-        stargaersCount,
+        stargazersCount,
         watchersCount,
         language,
         forksCount,
@@ -712,7 +712,7 @@ abstract class _SearchResponseItem implements SearchResponseItem {
       required final DateTime updatedAt,
       required final DateTime pushedAt,
       required final int size,
-      required final int stargaersCount,
+      required final int stargazersCount,
       required final int watchersCount,
       required final String? language,
       required final int forksCount,
@@ -757,7 +757,7 @@ abstract class _SearchResponseItem implements SearchResponseItem {
   @override
   int get size;
   @override
-  int get stargaersCount;
+  int get stargazersCount;
   @override
   int get watchersCount;
   @override

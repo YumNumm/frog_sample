@@ -18,7 +18,7 @@ class SearchResponseItem with _$SearchResponseItem {
     required DateTime updatedAt,
     required DateTime pushedAt,
     required int size,
-    required int stargaersCount,
+    required int stargazersCount,
     required int watchersCount,
     required String? language,
     required int forksCount,

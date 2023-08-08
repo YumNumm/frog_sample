@@ -1,0 +1,52 @@
+name: Auto Format
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Fetch flutter config
+        uses: kuhnroyal/flutter-fvm-config-action@v1
+      # https://github.com/subosito/flutter-action
+      - name: Set up flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: ${{ env.FLUTTER_CHANNEL }}
+          cache: true
+          cache-key: ${{ env.FLUTTER_VERSION }}-${{ env.FLUTTER_CHANNEL }}
+
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Install Melos
+        run: dart pub global activate melos && melos bootstrap
+
+      - name: build_runner
+        run: |
+          echo '${{ secrets.ENV }}' | base64 -d > .env
+          melos run build_runner
+
+      - name: format
+        run: melos run format
+
+      # 変更が発生した場合は プルリクエストを作成
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          delete-branch: true
+          commit-message: "Auto format"
+          committer: "GitHub Actions <noreply@github.com>"
+          base: ${{ github.head_ref }}
+          branch: "auto-format/${{ github.sha }}"
+          title: "Auto format - ref: ${{ github.ref_name }}"
+          body: "Auto format by GitHub Actions on ${{ github.sha }}\nby: ${{github.actor}}"

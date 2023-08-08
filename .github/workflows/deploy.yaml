@@ -1,0 +1,15 @@
+name: deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: srv1-osaka
+    steps:
+      - run: |
+          cd /opt/frog_sample
+          git pull
+          docker compose up -d --build --remove-orphans
+          docker compose ps -a

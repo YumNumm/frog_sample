@@ -5,18 +5,23 @@ import 'package:dio/dio.dart';
 import 'package:github_api/github_api.dart';
 
 Handler middleware(Handler handler) {
-  return handler.use(requestLogger()).use(
+  final apiClient = RepositoryApiClient(
+    Dio(
+      BaseOptions(
+        headers: {
+          'Authorization': 'Bearer ${Platform.environment['GITHUB_TOKEN']}',
+        },
+      ),
+    ),
+  );
+
+  return handler
+      .use(
+        requestLogger(),
+      )
+      .use(
         provider<RepositoryApiClient>(
-          (context) => RepositoryApiClient(
-            Dio(
-              BaseOptions(
-                headers: {
-                  'Authorization':
-                      'Bearer ${Platform.environment['GITHUB_TOKEN']}',
-                },
-              ),
-            ),
-          ),
+          (_) => apiClient,
         ),
       );
 }

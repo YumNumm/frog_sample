@@ -21,13 +21,11 @@ Future<Response> onRequest(RequestContext context) async {
   try {
     final client = context.read<RepositoryApiClient>();
     final result = await client.fetch(
-      'application/vnd.github+json',
-      'dart-frog',
-      params.query,
-      null,
-      null,
-      params.page,
-      params.perPage,
+      accept: 'application/vnd.github+json',
+      userAgent: 'dart-frog',
+      query: params.query,
+      page: params.page,
+      perPage: params.perPage,
     );
     return Response.json(
       body: RepositoryDto.fromSearchResponse(result),
